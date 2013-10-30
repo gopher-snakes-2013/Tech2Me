@@ -1,1 +1,7 @@
 <h1>tech2me</h1>
+
+<ul>
+<% @questions.each do |question| %>
+  <li><%= question.title %></li>
+<% end %>
+</ul>
