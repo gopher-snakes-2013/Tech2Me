@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id='container'>
+    <nav>
+      <span id='logo'>tech2me</span>
+    </nav>
+    <%= yield %>
+  </div>
 </body>
 </html>
