@@ -7,7 +7,6 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,11 +22,12 @@ end
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'awesome_print'
 end
 
-
-group :test do
+group :development, :test do
   gem 'rspec-rails'
+  gem 'simplecov', :require => false
 end
 
 gem 'jquery-rails'
