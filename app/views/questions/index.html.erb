@@ -1,3 +1,8 @@
-<h1>tech2me</h1>
-
+<ul id='question_area'>
+  <% @questions.each do |question| %>
+    <div class="question_card">
+      <li class='question_title'><%= question.title %></li>
+    </div>
+  <% end %>
+</ul>
 <%= link_to 'Create New Question', new_question_path(@question) %>
