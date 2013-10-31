@@ -24,7 +24,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'awesome_print'
-  gem 'wirble'
 end
 
 
