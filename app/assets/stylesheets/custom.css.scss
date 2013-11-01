@@ -65,6 +65,13 @@ body {
       border-radius: 5px;
       padding: 5px;
     }
+    .submit {
+      background-color: #2980b9;
+      color: white;
+      &:hover{
+        background-color: #3498db;
+      }
+    }
     textarea{
       height: 10em;
       border: none;
