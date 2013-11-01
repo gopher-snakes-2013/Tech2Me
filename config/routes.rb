@@ -6,5 +6,6 @@ Tech2me::Application.routes.draw do
   post "/questions", to: "questions#create"
   get "questions/new", to: "questions#new", as: :new_question
 
-  resources :answers, only: [:new]
+  resources :questions, only: [:show]
+  resources :answers, only: [:create]
 end
