@@ -31,6 +31,10 @@ group :development, :test do
   gem 'simplecov', :require => false
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
