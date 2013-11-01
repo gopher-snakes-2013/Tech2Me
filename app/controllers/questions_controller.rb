@@ -19,4 +19,8 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id].to_i)
   end
 
+  def edit
+    @question = Question.find(params[:id].to_i)
+  end
+
 end

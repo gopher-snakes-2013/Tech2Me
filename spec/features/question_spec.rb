@@ -17,6 +17,13 @@ feature "Questions" do
       expect(page).to have_content('edit')
     end
 
+    it "should display an edit form when edit is clicked" do
+      question = Question.create(title: "Burger King", body: "can you flip a burger?")
+      visit question_path(question)
+      click_on "edit"
+      page.has_selector?('form')
+    end
+
   end
 
 end
