@@ -58,7 +58,19 @@ body {
       display: block
     }
     input {
-      display: block
+      font-size: 1.2em;
+      display: block;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    textarea{
+      height: 10em;
+      border: none;
+      border-radius: 5px;
+      background-color:#ddd ;
+      padding: 5px;
+      font-size: 1.2em;
     }
   }
 
