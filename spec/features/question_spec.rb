@@ -9,11 +9,14 @@ feature "Questions" do
     end
   end
 
-  context "question card" do
+  context "question#show" do
+
     it "should have an edit button" do
-      visit questions_path
+      question = Question.create(title: "Burger King", body: "can you flip a burger?")
+      visit question_path(question)
       expect(page).to have_content('edit')
     end
+
   end
 
 end
