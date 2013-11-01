@@ -29,6 +29,7 @@ body {
     width: 593px;
     .question_card {
       margin: 10px;
+      padding: 5px;
       height: 150px;
       border-radius: 5px;
       background-color:#ddd ;
@@ -36,11 +37,14 @@ body {
       .question_title {
         padding: 5px;
         background-color: #c0392b;
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px;
         list-style-type: none;
-        font-family: 'TrebuchetMS', 'Verdana', Sans-Serif;
-        font-size: 20px;
-        color: #FFF;
+        a {
+          text-decoration: none;
+          font-family: 'TrebuchetMS', 'Verdana', Sans-Serif;
+          font-size: 20px;
+          color: #FFF;
+        }
       }
     }
   }
