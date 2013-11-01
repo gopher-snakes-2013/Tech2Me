@@ -1,6 +1,5 @@
 class AnswersController < ApplicationController
 
-
   def create
     @answer = Answer.new
     @answer.author = params[:answer][:author]
@@ -16,4 +15,5 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.update_attributes(params[:answer])
   end
+
 end
