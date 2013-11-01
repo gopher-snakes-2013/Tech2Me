@@ -1,14 +1,14 @@
 class AnswersController < ApplicationController
 
-  def create
-    @answer = Answer.new
-    @answer.author = params[:answer][:author]
-    @answer.answer = params[:answer][:answer]
-    @answer.question = Question.find(params[:answer][:question_id])
-    @answer.save
+  def index
 
-    @answers = Answer.all
-    redirect_to question_path(@answer.question)
+  end
+
+  def create
+    @question = Question.find(params[:question_id])
+    @answer =
+    @question.answers.create(params[:answer])
+    redirect_to question_path(@question)
   end
 
   def update
