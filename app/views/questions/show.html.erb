@@ -1,0 +1,26 @@
+<h1><%= @question.title %></h1>
+<br/>
+<p><%= @question.body %></p>
+
+<%= link_to 'back', root_path %>
+
+<h1>Add a new answer</h1>
+
+<%= form_for @answer do |f| %>
+  <%= f.hidden_field :question_id, value: @question.id %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :answer %>
+  <%= f.text_field :answer %>
+
+  <%= f.submit %>
+<% end %>
+
+  <ul>
+    <% @answers.each do |answer| %>
+      <li>Author: <%= answer.author %></li>
+      <li>answer: <%= answer.answer %></li>
+    <% end %>
+  </ul>

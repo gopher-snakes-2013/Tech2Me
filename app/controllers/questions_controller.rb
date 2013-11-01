@@ -13,4 +13,10 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def show
+    @answer = Answer.new
+    @answers = Answer.all
+    @question = Question.find(params[:id].to_i)
+  end
+
 end

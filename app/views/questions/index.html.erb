@@ -1,7 +1,7 @@
 <ul id='question_area'>
   <% @questions.each do |question| %>
     <div class="question_card">
-      <li class='question_title'><%= question.title %></li>
+      <li class='question_title'><%= link_to question.title, question_path(question) %></li>
     </div>
   <% end %>
 </ul>
