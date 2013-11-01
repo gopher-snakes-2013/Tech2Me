@@ -1,3 +1,8 @@
+<div id='question_pop_up' class='hidden'>
+  <%= render 'form' %>
+</div>
+
+
 <ul id='question_area'>
   <% @questions.each do |question| %>
     <div class="question_card">
@@ -5,4 +10,3 @@
     </div>
   <% end %>
 </ul>
-<%= link_to 'Create New Question', new_question_path(@question) %>
