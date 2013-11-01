@@ -8,4 +8,15 @@ feature "Questions" do
       expect(page).to have_content("Burger King")
     end
   end
+
+  context "question card" do
+    it "should have an edit button" do
+      visit questions_path
+      expect(page).to have_content('edit')
+    end
+  end
+
 end
+
+
+
