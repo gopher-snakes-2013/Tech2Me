@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 gem 'jquery-rails'

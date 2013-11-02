@@ -9,7 +9,7 @@ feature "Questions" do
     end
   end
 
-  context "User clicks 'New Question' button" do
+  context "User clicks 'New Question' button", js: true do
     it "should display a pop up form" do
       visit questions_path
       click_on 'New Question'

@@ -1,9 +1,11 @@
 <p>Ask a Question:</p>
 
-<%= form_for @question do |f| %>
+<%= form_for @question, :remote => true do |f| %>
   <%= f.label :title %>:
   <%= f.text_field :title %><br>
   <%= f.label :question %>:
   <%= f.text_field :body %><br>
+  <div class='submit-button'>
   <%= f.submit "Ask dat question" %>
+  </div>
 <% end %>
