@@ -24,7 +24,6 @@ describe QuestionsController do
   end
 
   context "questions#show" do
-
     it "should display a page with a question and a thread of answers" do
       my_question = Question.create(title:"this is a title", body: "this is the question body")
       get :show, id: my_question.id
@@ -32,4 +31,11 @@ describe QuestionsController do
     end
   end
 
+  context "question#update" do
+    it "should update a question with valid params" do
+      my_question = Question.create(title:"this is a title", body: "this is the question body")
+      put :update, id: my_question.id, question: { title: "new title" }
+      Question.find(my_question.id).title.should eq("new title")
+    end
+  end
 end

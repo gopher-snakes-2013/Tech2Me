@@ -21,8 +21,29 @@ feature "Questions" do
       click_on 'New Question'
       fill_in 'question_title', :with => 'Trostli Inc'
       fill_in 'question_body', :with => 'What is the square root of Daniel?'
-      click_on 'Ask dat question'
+      click_on 'Ask!'
       expect(page).to have_content('Trostli Inc')
     end
   end
+
+  context "question#show" do
+
+    it "should have an edit button" do
+      question = Question.create(title: "Burger King", body: "can you flip a burger?")
+      visit question_path(question)
+      expect(page).to have_content('edit')
+    end
+
+    it "should display an edit form when edit is clicked" do
+      question = Question.create(title: "Burger King", body: "can you flip a burger?")
+      visit question_path(question)
+      click_on "edit"
+      page.has_selector?('form')
+    end
+
+  end
+
 end
+
+
+
