@@ -1,6 +1,6 @@
 <h1>Ask a Question:</h1>
 
-<%= form_for @question do |f| %>
+<%= form_for @question, remote: true do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :question %>
