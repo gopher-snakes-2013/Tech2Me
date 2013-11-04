@@ -9,6 +9,7 @@
 <body>
   <div id='container'>
     <nav>
+
       <span id='logo'>tech2me</span>
 
      <% if signed_in? %>
@@ -25,6 +26,8 @@
       <% end %>
     </div>
 
+      <%= link_to 'tech2me', root_path, id: "logo" %>
+      <span id='new_question_btn'><%= link_to 'New Question', new_question_path(@question) %></span>
 
     </nav>
 

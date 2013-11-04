@@ -7,6 +7,6 @@ Tech2me::Application.routes.draw do
   get "questions/new", to: "questions#new", as: :new_question
 
   resources :users
-  resources :questions, only: [:show]
+  resources :questions, only: [:show, :edit, :update]
   resources :answers, only: [:create]
 end

@@ -136,8 +136,11 @@ GEM
       multi_json (~> 1.0)
       rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
+<<<<<<< HEAD
     sextant (0.2.4)
       rails (>= 3.2)
+=======
+>>>>>>> a8d5d3de2320939a18d80164f62d36b5e6a7aa6f
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     simplecov (0.7.1)
@@ -180,7 +183,10 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   selenium-webdriver
+<<<<<<< HEAD
   sextant
+=======
+>>>>>>> a8d5d3de2320939a18d80164f62d36b5e6a7aa6f
   shoulda-matchers
   simplecov
   uglifier (>= 1.0.3)

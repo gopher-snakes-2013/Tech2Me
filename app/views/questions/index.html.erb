@@ -1,9 +1,9 @@
+<div id='question_pop_up' class='hidden'>
+  <%= render 'form' %>
+</div>
 
 <ul id='question_area'>
   <% @questions.each do |question| %>
-    <div class="question_card">
-      <li class='question_title'><%= link_to question.title, question_path(question) %></li>
-    </div>
+    <%= render 'question', question: question %>
   <% end %>
 </ul>
-<%= link_to 'Create New Question', new_question_path(@question) %>
