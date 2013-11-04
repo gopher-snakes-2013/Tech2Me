@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @question = Question.new
   end
 
 
@@ -12,7 +13,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create(params[:question])
-    redirect_to questions_path
+    render :json => render_to_string(:partial => 'question', :locals => {:question => @question }).to_json
   end
 
 
