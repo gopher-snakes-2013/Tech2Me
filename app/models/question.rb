@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
-  attr_accessible :title, :body
-  validates :title, presence: true, length: { minimum: 5 }
-  validates :body, presence: true, length: { minimum: 10 }
+  attr_accessible :title, :body, :user_id
+  validates :title, presence: true
+  validates :body, presence: true
   belongs_to :user
   has_many :answers
 end

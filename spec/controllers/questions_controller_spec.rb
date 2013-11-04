@@ -15,7 +15,7 @@ describe QuestionsController do
   context "#create" do
     it "creates a post with valid params" do
       expect {
-        post :create, {:question => {:title => "Test Title", :body => "Test Body Shit"}}
+        post :create, {:question => {:title => "Test Title", :body => "Test Body Shit", :user_id => 1}}
       }.to change(Question, :count).by(1)
     end
 

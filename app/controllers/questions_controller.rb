@@ -5,7 +5,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(params[:question])
+    @question = Question.new
+    @question.title = params[:question][:title]
+    @question.body = params[:question][:body]
+    User.find(current_user.id).questions << @question
+    if @question.save
+      p "YAY"
+    else
+      p "NOOOOOOOOOOOOO"
+    end
     redirect_to questions_path
   end
 

@@ -5,7 +5,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.belongs_to :user
-      t.belongs_to :answer
       t.timestamps
     end
   end
