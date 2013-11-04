@@ -15,12 +15,14 @@ describe QuestionsController do
   context "#create" do
     it "creates a post with valid params" do
       expect {
-        post :create, {:question => {:title => "Test Title", :body => "Test Body Shit", :user_id => 1}}
+        sign_in
+        post :create, {:question => {:title => "Test Title", :body => "Test Body Shit"}}
       }.to change(Question, :count).by(1)
     end
 
     it "doesn't create a questions when params are invalid" do
       expect {
+        sign_in
         post :create, {:question => {:title => "Where did all the cookies go?"}}
       }.to_not change(Question, :count)
     end

@@ -28,6 +28,8 @@ group :development do
 end
 
 group :development, :test do
+  gem 'faker'
+  gem 'factory_girl_rails', '~> 4.2'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'simplecov', :require => false

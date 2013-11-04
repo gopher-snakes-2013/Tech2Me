@@ -11,7 +11,9 @@ describe QuestionsController do
 
   context "question#create" do
     it "should add a question to database" do
-      expect { post :create, :question => { :title => "i am a title", :body => "i am content" }
+      expect {
+        sign_in
+        post :create, :question => { :title => "i am a title", :body => "i am content" }
       }.to change(Question, :count)
     end
   end

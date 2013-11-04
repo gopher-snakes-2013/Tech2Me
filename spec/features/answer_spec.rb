@@ -14,6 +14,7 @@ feature "when user visits new page" do
 
     it 'page shows form that redirects to question#show' do
       visit question_path(my_question)
+      sign_in
       fill_in('answer_author', :with => 'Dan Authorman')
       fill_in('answer_answer', :with => 'I am an answer')
       click_on('Create Answer')
