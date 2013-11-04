@@ -14,7 +14,7 @@ feature "Questions" do
 
   scenario "User can get to new questions form via questions#index" do
     visit questions_path
-    click_link "Create New Question"
+    click_link "New Question"
     expect(page).to have_css("form#new_question")
   end
 
@@ -46,15 +46,6 @@ feature "Questions" do
       visit questions_path
       click_on 'New Question'
       expect(page).to have_content("Ask a Question:")
-    end
-
-    it "should create a new question when you fill in the form and submit" do
-      visit questions_path
-      click_on 'New Question'
-      fill_in 'question_title', :with => 'Trostli Inc'
-      fill_in 'question_body', :with => 'What is the square root of Daniel?'
-      click_on 'Ask!'
-      expect(page).to have_content('Trostli Inc')
     end
   end
 

@@ -5,6 +5,11 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def new
+    @question = Question.new
+  end
+
+
   def create
     @question = Question.new
     @question.title = params[:question][:title]
@@ -15,16 +20,6 @@ class QuestionsController < ApplicationController
     else
       p "NOOOOOOOOOOOOO"
     end
-    redirect_to questions_path
-  end
-
-  def new
-    @question = Question.new
-  end
-
-
-  def create
-    @question = Question.create(params[:question])
     render :json => render_to_string(:partial => 'question', :locals => {:question => @question }).to_json
   end
 

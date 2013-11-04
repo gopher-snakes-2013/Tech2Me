@@ -10,14 +10,12 @@
   <div id='container'>
     <nav>
 
-      <span id='logo'>tech2me</span>
-
      <% if signed_in? %>
 
     Signed in as: <%= current_user.email %>
-    <%= link_to 'Sign out', sign_out_path, :method => :delete %>
+    <%= link_to 'Sign out', sign_out_path, :method => :delete, :class => 'sign_in' %>
     <% else %>
-    <%= link_to 'Sign in', sign_in_path %>
+    <%= link_to 'Sign in', sign_in_path, :class => 'sign_in' %>
     <% end %>
 
     <div id="flash">
