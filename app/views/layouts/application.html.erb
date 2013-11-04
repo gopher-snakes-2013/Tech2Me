@@ -9,10 +9,26 @@
 <body>
   <div id='container'>
     <nav>
+
+     <% if signed_in? %>
+
+    Signed in as: <%= current_user.email %>
+    <%= link_to 'Sign out', sign_out_path, :method => :delete, :class => 'sign_in' %>
+    <% else %>
+    <%= link_to 'Sign in', sign_in_path, :class => 'sign_in' %>
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
       <%= link_to 'tech2me', root_path, id: "logo" %>
       <span id='new_question_btn'><%= link_to 'New Question', new_question_path(@question) %></span>
 
     </nav>
+
     <%= yield %>
   </div>
 </body>

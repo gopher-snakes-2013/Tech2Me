@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'shoulda-matchers'
 require 'capybara'
+require 'clearance/testing'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -18,4 +19,13 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = "random"
+end
+
+def sign_in_user
+  User.create(email: "Ken@ken.ken", password: "beAMan")
+  visit root_path
+  click_on 'Sign in'
+  fill_in 'Email', with: "Ken@ken.ken"
+  fill_in 'Password', with: "beAMan"
+  click_button 'Sign in'
 end

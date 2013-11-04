@@ -14,24 +14,30 @@
 ActiveRecord::Schema.define(:version => 20131101230340) do
 
   create_table "answers", :force => true do |t|
-    t.string  "author"
-    t.text    "answer"
-    t.integer "question_id"
+    t.text     "author"
+    t.text     "body"
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string "email"
-    t.string "password"
-    t.string "encrypted_password", :limit => 128
-    t.string "confirmation_token", :limit => 128
-    t.string "remember_token",     :limit => 128
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.string   "encrypted_password", :limit => 128
+    t.string   "confirmation_token", :limit => 128
+    t.string   "remember_token",     :limit => 128
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

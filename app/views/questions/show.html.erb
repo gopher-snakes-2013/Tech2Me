@@ -13,8 +13,8 @@
   <%= f.label :author %>
   <%= f.text_field :author %>
 
-  <%= f.label :answer %>
-  <%= f.text_area :answer %>
+  <%= f.label :body, "Answer" %>
+  <%= f.text_field :body %>
 
   <%= f.submit %>
 <% end %>
@@ -22,6 +22,6 @@
   <ul>
     <% @answers.each do |answer| %>
       <li>Author: <%= answer.author %></li>
-      <li>answer: <%= answer.answer %></li>
+      <li>answer: <%= answer.body %></li>
     <% end %>
   </ul>

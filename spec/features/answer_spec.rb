@@ -1,23 +1,18 @@
 require 'spec_helper'
 
-
 feature "when user visits new page" do
 
   let(:my_question){
-    Question.create(title: "Is this a valid question?", body: "let's take this question seriously." )
+    Question.create(title: "something different", body: "let's take this question seriously." )
   }
 
-    it "page shows Add a new answer" do
-      visit question_path(my_question)
-      page.should have_content('Add a new answer')
-    end
-
-    it 'page shows form that redirects to question#show' do
-      visit question_path(my_question)
-      fill_in('answer_author', :with => 'Dan Authorman')
-      fill_in('answer_answer', :with => 'I am an answer')
-      click_on('Create Answer')
-      page.should have_content('I am an answer')
-    end
+  scenario 'User can add an answer to a question' do
+    sign_in_user
+    visit question_path(my_question)
+    save_and_open_page
+    fill_in 'Author', :with => "Poop"
+    fill_in 'Answer', :with => "WTF"
+    click_button 'Create Answer'
+  end
 
 end
