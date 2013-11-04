@@ -14,18 +14,14 @@
 ActiveRecord::Schema.define(:version => 20131101230340) do
 
   create_table "answers", :force => true do |t|
-    t.text     "author"
-    t.text     "body"
-    t.integer  "question_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string  "author"
+    t.text    "answer"
+    t.integer "question_id"
   end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
