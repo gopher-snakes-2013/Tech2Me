@@ -1,0 +1,10 @@
+<% if @user_answers %>
+  <h1> HERE ARE YOUR ANSWERS </h1>
+  <% @user_answers.each do |answer| %>
+  <ul> Author Name You Used: <%= answer.author %>
+    <li> Answer You provided: <%= answer.body %> </li>
+  </ul>
+  <% end %>
+<% else %>
+  <h2> <%= @no_answers %> </h2>
+<% end %>

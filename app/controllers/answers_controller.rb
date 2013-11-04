@@ -13,6 +13,14 @@ class AnswersController < ApplicationController
     redirect_to question_path(@answer.question)
   end
 
+  def index
+    if Answer.where(:user_id => current_user.id)
+      @user_answers = Answer.where(:user_id => current_user.id)
+    else
+      @no_answers = "You do not have any answers, homie. Go answer some questions :)"
+    end
+  end
+
   def update
     @answer = Answer.find(params[:id])
     @answer.update_attributes(params[:answer])

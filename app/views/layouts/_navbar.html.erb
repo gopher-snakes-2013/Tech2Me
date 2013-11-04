@@ -1,0 +1,21 @@
+<nav>
+  <%= link_to 'tech2me', root_path, id: "logo" %>
+  <% if signed_in? %>
+  <p> Signed in as: <%= current_user.email %> <p>
+    <%= link_to 'Sign out', sign_out_path, :method => :delete, :class => 'sign_in' %>
+    <% else %>
+    <%= link_to 'Sign in', sign_in_path, :class => 'sign_in' %>
+    <% end %>
+  </br>
+  <div id="flash">
+    <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+
+  <span id='new_question_btn'><%= link_to 'New Question', new_question_path(@question), class: 'fun-links' %></span>
+</br>
+<% if current_user %>
+<%= link_to 'View your past Answers', answers_path, class: 'fun-links' %>
+<% end %>
+</nav>

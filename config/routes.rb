@@ -8,5 +8,5 @@ Tech2me::Application.routes.draw do
 
   resources :users
   resources :questions, only: [:show, :edit, :update]
-  resources :answers, only: [:create]
+  resources :answers, only: [:create, :index]
 end
