@@ -20,3 +20,12 @@ RSpec.configure do |config|
 
   config.order = "random"
 end
+
+def sign_in_user
+  User.create(email: "Ken@ken.ken", password: "beAMan")
+  visit root_path
+  click_on 'Sign in'
+  fill_in 'Email', with: "Ken@ken.ken"
+  fill_in 'Password', with: "beAMan"
+  click_button 'Sign in'
+end
