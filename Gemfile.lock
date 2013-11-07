@@ -50,13 +50,6 @@ GEM
       email_validator (~> 1.4)
       rails (>= 3.1)
     coderay (1.1.0)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.3)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
     email_validator (1.4.0)
@@ -171,7 +164,6 @@ DEPENDENCIES
   binding_of_caller
   capybara
   clearance
-  coffee-rails (~> 3.2.1)
   factory_girl_rails (~> 4.2)
   faker
   jquery-rails

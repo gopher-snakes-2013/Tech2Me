@@ -12,6 +12,7 @@ feature "Questions" do
     expect(page).to have_content("Burger King")
   end
 
+  # this can be merged with 22, if you can fill it, then you can see it.
   scenario "User can get to new questions form via questions#index" do
     visit questions_path
     click_link "New Question"
@@ -35,6 +36,7 @@ feature "Questions" do
 
   context "User visits questions index" do
     it "should display a list of question titles" do
+      # this line is repetitive, why not use my_question
       Question.create(title: "Burger King", body: "can you flip a burger?")
       visit questions_path
       expect(page).to have_content("Burger King")

@@ -7,6 +7,7 @@ feature "when user visits new page" do
   }
 
   scenario 'User can add an answer to a question' do
+    # attention: this is not a test
     sign_in_user
     visit question_path(my_question)
     save_and_open_page
@@ -16,3 +17,4 @@ feature "when user visits new page" do
   end
 
 end
+

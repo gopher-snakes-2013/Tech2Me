@@ -1,12 +1,14 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: tech2me_development
   pool: 5
 
 test:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: tech2me_test
   pool: 5
 

@@ -8,7 +8,7 @@
 <h1>Add a new answer</h1>
 
 <%= form_for @answer do |f| %>
-  <%= f.hidden_field :question_id, value: @question.id %>
+  <%= hidden_field_tag :question_id, value: @question.id %>
 
   <%= f.label :author %>
   <%= f.text_field :author %>

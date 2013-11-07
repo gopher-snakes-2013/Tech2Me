@@ -5,38 +5,31 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def new
-    @question = Question.new
-  end
-
-
   def create
-    @question = Question.new
-    @question.title = params[:question][:title]
-    @question.body = params[:question][:body]
-    User.find(current_user.id).questions << @question
+    @question = current_user.questions.build params[:question]
     if @question.save
-      p "YAY"
+      p "YAY" #nice!
     else
-      p "NOOOOOOOOOOOOO"
+      p "NOOOOOOOOOOOOO" #sweet!
     end
     render :json => render_to_string(:partial => 'question', :locals => {:question => @question }).to_json
   end
 
 
   def show
-    @answer = Answer.new
-    @answers = Answer.all
     @question = Question.find(params[:id].to_i)
+    @answer = Answer.new
+    @answers = @question.answers
   end
 
 
   def edit
-    @question = Question.find(params[:id].to_i)
+    @question = Question.find(params[:id])
   end
 
 
   def update
+    # you'r'e handling the happy path only.
     question = Question.find(params[:id])
     question.update_attributes(params[:question])
     redirect_to root_path

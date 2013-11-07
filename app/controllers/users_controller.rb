@@ -4,17 +4,13 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # def new
-  #   @user = User.new
-  #   enable :sessions
-  #   p session[:id] = @user[:id]
-  # end
-
   def create
-    @create = User.create(params[:user])
-    redirect_to questions_path
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to questions_path
+    else
+      render :something
+    end
   end
-
-
 
 end
