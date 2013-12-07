@@ -11,10 +11,7 @@ class QuestionsController < ApplicationController
 
 
   def create
-    @question = Question.new
-    @question.title = params[:question][:title]
-    @question.body = params[:question][:body]
-    User.find(current_user.id).questions << @question
+    @question = current_user.questions.build(params[:question])
     if @question.save
       p "YAY"
     else
@@ -26,13 +23,13 @@ class QuestionsController < ApplicationController
 
   def show
     @answer = Answer.new
-    @question = Question.find(params[:id].to_i)
+    @question = Question.find(params[:id])
     @answers = @question.answers
   end
 
 
   def edit
-    @question = Question.find(params[:id].to_i)
+    @question = Question.find(params[:id])
   end
 
 
