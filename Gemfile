@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'clearance'
-gem 'debugger'
 gem 'pg'
 
 group :assets do
@@ -19,6 +18,7 @@ end
 
 group :development, :test do
   gem 'faker'
+  gem 'debugger'
   gem 'factory_girl_rails', '~> 4.2'
   gem 'rspec-rails'
   gem 'simplecov', :require => false
