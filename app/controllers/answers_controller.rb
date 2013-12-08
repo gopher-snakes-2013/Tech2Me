@@ -5,7 +5,6 @@ class AnswersController < ApplicationController
     @answer = current_question.answers.build(params[:answer])
     @answer.user = current_user
     if @answer.save
-      flash[:error] = "Something went wrong"
       redirect_to question_path(@answer.question)
     else
       flash[:error] = "Something went wrong"
