@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
       redirect_to question_path(@answer.question)
     else
       flash[:error] = "Something went wrong"
+      redirect_to question_path(@answer.question)
     end
   end
 
