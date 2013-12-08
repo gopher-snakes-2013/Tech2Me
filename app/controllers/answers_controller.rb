@@ -1,16 +1,15 @@
 class AnswersController < ApplicationController
 
   def create
-    @answer = Answer.new
-    @answer.author = params[:answer][:author]
-    @answer.body = params[:answer][:body]
     current_question = Question.find(params[:answer][:question_id])
-    current_question.answers << @answer
-    user_who_wrote_answer = User.find(current_user.id)
-    user_who_wrote_answer.answers << @answer
-    @answer.save
-    @answers = Answer.all
-    redirect_to question_path(@answer.question)
+    @answer = current_question.answers.build(params[:answer])
+    @answer.user = current_user
+    if @answer.save
+      flash[:error] = "Something went wrong"
+      redirect_to question_path(@answer.question)
+    else
+      flash[:error] = "Something went wrong"
+    end
   end
 
   def update

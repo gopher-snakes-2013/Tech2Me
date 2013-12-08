@@ -20,16 +20,12 @@
        <%= link_to 'Sign in', sign_in_path, :class => 'sign_in' %>
      <% end %>
 
-     <div id="flash">
-      <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
-
-
   </nav>
 
   <%= yield %>
+
+  <%= flash[:error] %>
+
 </div>
 </body>
 </html>
